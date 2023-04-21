@@ -1,16 +1,24 @@
 import React from 'react';
 import './App.css';
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
 import Main from "./pages/Main";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-          <Main></Main>
-      </header>
-    </div>
-  );
+    const router = createBrowserRouter([
+        {
+            path: "/",
+            element: <Main/>
+        }
+    ]);
+
+    return (
+        <div className="App">
+            <header className="App-header">
+                <RouterProvider router={router}/>
+            </header>
+        </div>
+    );
 }
 
 export default App;
