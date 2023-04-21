@@ -4,13 +4,18 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
 import Main from "./pages/Main";
 import ErrorPage from "./pages/ErrorPage";
+import Weather from "./pages/Weather";
 
 function App() {
     const router = createBrowserRouter([
         {
             path: "/",
             element: <Main/>,
-            errorElement: <ErrorPage />
+            errorElement: <ErrorPage />,
+        },
+        {
+            path: "/weather/:weatherId",
+            element: <Weather />
         }
     ]);
 
